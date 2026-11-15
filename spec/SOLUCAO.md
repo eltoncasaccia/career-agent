@@ -6,7 +6,7 @@
 >
 > Status: **v11 — IDEIA FECHADA.** Pronto para a fase técnica (arquitetura,
 > linguagem, frameworks), que é escopo de outro documento.
-> Última atualização: 2026-09-05
+> Última atualização: 2026-10-01
 
 ---
 
@@ -167,7 +167,8 @@ disciplina?"*. A resposta vira nível na escala do §4.
 
 ### RN-6 — Acesso às fontes exige permissão explícita
 
-O sistema **lê e escreve** em GitHub e (se viável) LinkedIn. Precisa de acesso
+O sistema **lê e escreve** no GitHub; no LinkedIn, **só lê** — pelo que o
+usuário exporta ou envia (RN-22) — e nunca escreve (RN-10). Precisa de acesso
 autorizado pelo usuário. Escrita confirmada por ação, nunca autorização em
 bloco — o usuário sempre sabe o que vai ser alterado antes de acontecer.
 
@@ -276,8 +277,8 @@ procurar vaga: o match melhora conforme a evolução acontece.
 
 ### RN-19 — Feedback visual, ancorado na tela real
 
-Onde o sistema não pode (ou não deve) editar, ele **mostra**. Abre a página na
-sessão do próprio usuário, tira o screenshot e **anota a imagem**: caixa no
+Onde o sistema não pode (ou não deve) editar, ele **mostra**. Recebe o print
+que o usuário tira da própria tela (RN-22) e **anota a imagem**: caixa no
 headline vazio, número na seção fraca, seta onde falta conteúdo — com o texto
 pronto ao lado de cada marcação.
 
@@ -288,8 +289,8 @@ pronto ao lado de cada marcação.
 ```
 
 Resolve o que a lista de sugestões não resolve: **"onde eu colo isso?"**.
-É o modo de feedback padrão do sistema, e transforma a auditoria da RN-17 de
-textual em visual.
+É o modo de feedback padrão do sistema, e transforma a auditoria (RN-15) e a
+revalidação pelo link (RN-17, §2 uso 3) de textuais em visuais.
 
 ### RN-20 — Relatório antes/depois
 
@@ -318,9 +319,9 @@ Serve a três propósitos:
 **Regra dura, não limitação técnica.** O sistema não pede, não armazena e não
 manipula senha de nenhuma plataforma.
 
-Ele opera sobre a **sessão que o usuário já tem autenticada** no próprio
-navegador: a pessoa faz login normalmente, como sempre faz, e o agente enxerga
-a página que já está aberta para ela.
+O login é sempre feito **pelo próprio usuário**, na própria plataforma, como
+ele sempre faz. Para ler, o sistema usa o que a pessoa exporta ou envia
+(RN-22) — nunca entra na conta no lugar dela.
 
 > Um sistema de carreira que pede a senha do seu LinkedIn é um sistema que você
 > não deveria usar. Vale para o produto e vale como sinal de confiança.
@@ -443,7 +444,7 @@ permite dizer *"você tem 3 ex-colegas nessa empresa; este é o mais próximo"*.
 ## 8. Fatiamento
 
 **MVP = a menor fatia que leva o usuário #1 a uma candidatura real com material
-que se sustenta.** Não construir os 15 antes de entregar algo.
+que se sustenta.** Não construir os 17 antes de entregar algo.
 
 ## 9. Riscos
 
@@ -484,6 +485,12 @@ código anti-bot do LinkedIn. Sem sessão logada não se lê **nada**.
 > arquivo de dados) e anota os prints que o usuário envia. Leitura automatizada
 > vira conveniência opcional, nunca requisito.
 
+### 9.4 Escopo (MÉDIO)
+
+17 módulos, dois runtimes, quatro superfícies, base de rubricas.
+
+**Mitigação:** §8.
+
 ### 9.5 Gravação de entrevista tem implicação legal (MÉDIO — novo na v11)
 
 Gravar uma conversa envolve **outra pessoa**: o entrevistador. As regras variam
@@ -496,12 +503,6 @@ proibir.
 **gravação** é opt-in, exibe aviso sobre consentimento e orienta o usuário a
 pedir autorização ao entrevistador antes. A responsabilidade pela gravação é de
 quem grava — o sistema informa, não decide por ele.
-
-### 9.4 Escopo (MÉDIO)
-
-15 módulos, dois runtimes, quatro superfícies, base de rubricas.
-
-**Mitigação:** §8.
 
 ### ~~Fabricação de credenciais~~ — ELIMINADO (RN-11: o sistema não constrói projetos)
 
@@ -530,7 +531,7 @@ Sessões temáticas curtas, não uma entrevista-monstro:
 |---|---|
 | **Objetivo** | Conseguir emprego; artefatos são meio, não fim |
 | **Natureza** | Produto multiusuário, Elton é usuário #1 |
-| **Runtime** | Claude Code primeiro (skills), depois portar p/ ADK/LangGraph |
+| **Runtime** | Claude Code primeiro (skills), depois portar p/ ADK/LangGraph — direção; a fase técnica confirma ou revisa |
 | **Motor** | Rubrica por superfície: avalia, pergunta, revalida (RN-16) |
 | **Lacunas** | Três: dados, mercado, apresentação (§3) |
 | **Competências** | Escala de domínio como **norte**, não veredito (§4, RN-14) |
@@ -612,7 +613,7 @@ precisa; (b) uma peça de portfólio séria — sistema multiagente portado entr
 runtimes não é projeto de tutorial; (c) prática de ADK e LangGraph aplicada a
 algo real.
 
-**Perda de tempo seria** construir os 15 módulos mirando um SaaS antes de
+**Perda de tempo seria** construir os 17 módulos mirando um SaaS antes de
 validar. Usar primeiro, virar a primeira evidência, e então decidir com dado.
 
 ## 13. Ecossistema pesquisado (via skill `find-skills`)

@@ -28,5 +28,7 @@ Os passos 1 a 4 estão feitos. O passo 5 é o próximo.
 
 ## Próximo passo
 
-Fase técnica: arquitetura, linguagem, se é multiagente, quais frameworks.
-Nada disso está decidido, e nada disso pertence aos documentos acima.
+Fase técnica: arquitetura, linguagem, se é multiagente, quais frameworks — em
+documento próprio, fora dos acima. A única direção já registrada é a de runtime
+(Claude Code primeiro, depois ADK/LangGraph — [`SOLUCAO.md` §11](spec/SOLUCAO.md#11-decisões-tomadas));
+a fase técnica confirma ou revisa.
