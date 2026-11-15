@@ -6,3 +6,4 @@ __pycache__/
 .env
 dados/
 .claude/skills/
+.serena/
